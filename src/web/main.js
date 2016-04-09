@@ -87,6 +87,7 @@ function hideOverlay(eid) {
 function showCtrlPanel() {
     window.open('ctrlpanel.html', '_blank', 'height=280,width=650');
     hideOverlay('overlay');
+    hideOverlay('github-fork');
     toggleControls();
 }
 
