@@ -11,7 +11,7 @@ import io.netty.handler.logging.LoggingHandler;
 
 public class Main {
 	
-	public static final String VERSION_ID = "93e5b2a9-3774-4266-a7a1-c5874c106d1c";
+	public static final String VERSION_ID = "1a1f83be-a26b-4f75-8f92-83168f45cb91";
 
 	public static void main(final String[] args) {
 		Thread t = new Thread(new Runnable() {
