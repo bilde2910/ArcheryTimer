@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="552px" height="552px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+	<desc>Favicon for Archery Timer</desc>
+	<circle cx="276" cy="325" r="160" stroke="silver" fill="none" stroke-width="24" />
+	<circle cx="276" cy="325" r="125" stroke="black" fill="none" stroke-width="24" />
+	<circle cx="276" cy="325" r="90" stroke="#3090c7" fill="none" stroke-width="24" />
+	<circle cx="276" cy="325" r="55" stroke="red" fill="none" stroke-width="24" />
+	<circle cx="276" cy="325" r="20" stroke="yellow" fill="yellow" stroke-width="24" />
+	<rect x="-220" y="-35" height="70" width="30" fill="silver" transform="translate(276, 325) rotate(45 0 0)" />
+	<rect x="-220" y="-35" height="70" width="30" fill="silver" transform="translate(276, 325) rotate(135 0 0)" />
+	<circle cx="276" cy="90" r="40" stroke="silver" fill="transparent" stroke-width="8" />
+	<rect x="261" y="90" height="55" width="30" fill="silver" stroke="black" stroke-width="8" />
+</svg>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+    <head>
+        <title>Archery timer</title>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css?1">
+		<link rel="icon" type="image/png" href="favicon.png">
+		<script type="text/javascript" src="i18n.js?5"></script>
+        <script type="text/javascript" src="main.js?3"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+    <body>
+        <div class="timer" id="maintimer">
+            <table><tbody><tr><td class="abcd noselect" onclick="toggleABCD();"><div id="abcd">A<br />B</div></td><td id="timer" class="noselect" onclick="setTime();">120</td></tr></tbody></table>
+        </div>
+        <div class="config" id="osccontrols">
+            <a href="javascript:void();" onclick="startTimer();" data-i18n="176cd88e-ad14-4a8b-9633-c8257ad35d92"></a><br /><a href="javascript:void();" class="egcy" onclick="ceaseFire();" data-i18n="2e507705-99cb-4d92-8fa7-436e32b67083"></a>
+        </div>
+        <div class="hidden">
+            <audio id="beep3" preload="auto">
+                <source src="3beep.ogg" type="audio/ogg">
+                <source src="3beep.wav" type="audio/wav">
+                <source src="3beep.m4a" type="audio/mp4">
+            </audio>
+            <audio id="beep1" preload="auto">
+                <source src="1beep.ogg" type="audio/ogg">
+                <source src="1beep.wav" type="audio/wav">
+                <source src="1beep.m4a" type="audio/mp4">
+            </audio>
+            <audio id="beep2" preload="auto">
+                <source src="2beep.ogg" type="audio/ogg">
+                <source src="2beep.wav" type="audio/wav">
+                <source src="2beep.m4a" type="audio/mp4">
+            </audio>
+            <audio id="cease" preload="auto">
+                <source src="cease.ogg" type="audio/ogg">
+                <source src="cease.wav" type="audio/wav">
+                <source src="cease.m4a" type="audio/mp4">
+            </audio>
+        </div>
+        <div class="overlay" id="overlay">
+            <div class="inneroverlay">
+                <p class="stronghead" data-i18n="78e23400-3a88-4271-9310-e2af36837c8d"></p>
+                <p><span data-i18n="ec50e48a-2cfd-4b19-bdbc-161aef491f82" data-i18n-ab='<span class="abcd">AB</span>' data-i18n-cd='<span class="abcd">CD</span>'></span><br /><span data-i18n="17a7b876-4cae-4032-ad70-f1b0331afa8b"></span></p>
+                <p data-i18n="64141455-4ad9-4968-ae2a-2cdb1d6f893b" data-i18n-remainingtime='<span class="timerdemo">120</span>'></p>
+                <p data-i18n="b6f9447d-542f-497f-b006-0a09ef6743e0" data-i18n-startcontinue='<span class="startdemo">{%$176cd88e-ad14-4a8b-9633-c8257ad35d92}</span>'></p>
+                <p data-i18n="91eafab3-1e35-488d-a24e-f5c5c9cc96c7" data-i18n-emergencystop='<span class="egcydemo">{%$2e507705-99cb-4d92-8fa7-436e32b67083}</span>'></p>
+                <p data-i18n="b9c6b8b2-41c2-479d-87ee-50ebb1d1ee2f" data-i18n-controlpanel='<a href="javascript:void();" onclick="showCtrlPanel();">{%$101c2c75-00a7-44de-b922-4af7eeec0d24}</a>'></p>
+                <p class="introcontinue"><a href="javascript:void();" onclick="hideOverlay('overlay');" data-i18n="f1f31ca2-56f0-4a86-a92a-2a1ab120058b"></a></p>
+            </div>
+        </div>
+        <div class="overlay" id="audsyncwarn">
+            <div class="inneroverlay">
+                <p class="stronghead" data-i18n="d3fff53a-9f70-40ea-ae6a-da502f71d8af"></p>
+                <p data-i18n="2397d0ed-76f1-4fce-9db5-842367645a43"></p>
+                <p data-i18n="d26303e6-24d7-40cb-a8c2-29dce048ecdb" data-i18n-getintouch='<a href="https://varden.info/contact.php" target="_blank">{%$5ef3857e-333b-4de0-9292-7ef432118520}</a>'></p>
+                <p class="introcontinue"><a href="javascript:void();" onclick="hideOverlay('audsyncwarn')" data-i18n="ac1cb77e-01fd-4432-a185-01053bd5b611"></a></p>
+            </div>
+        </div>
+		<div class="overlay" id="welcome" style="background: black;">
+            <div class="inneroverlay">
+                <p class="stronghead">Welcome to the archery timer!</p>
+                <p>This is a standard archery timer that can be used for free, even commercially. You can choose how long each round should last, switch between AB and CD, and generally do anything you'd normally do with an archery timer. Here's an example of how it looks:</p>
+				<img src="preview.png" alt="Screenshot" class="imgpreview" />
+				<p>Select your language to continue:<br /><a href="./offline/"><small>(or download the timer for offline use)</small></a></p>
+				<p><img src="flags/us.svg?" alt="US" class="imgflag" onclick="localizeAndContinue('enUS');" /> <img src="flags/no.svg?" alt="NO" class="imgflag" onclick="localizeAndContinue('nbNO');" /></p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            timer = document.getElementById('timer');
+            abcd = document.getElementById('abcd');
+            beep1 = document.getElementById('beep1');
+            beep2 = document.getElementById('beep2');
+            beep3 = document.getElementById('beep3');
+            cease = document.getElementById('cease');
+        </script>
+    </body>
+</html>

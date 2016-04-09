@@ -1,0 +1,169 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+.hidden {
+    display: none;
+}
+div.overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.90);
+    color: white;
+    font-size: 1.8vw;
+    top: 0;
+    left: 0;
+}
+div.inneroverlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    width: 80%;
+}
+div.inneroverlay p.stronghead {
+    font-size: 3vw;
+    font-weight: bold;
+}
+div.inneroverlay p a {
+    color: #777;
+}
+div.inneroverlay p.introcontinue {
+    font-size: 2vw;
+    margin-top: 4vw;
+}
+div.inneroverlay p.audsync {
+    font-size: 1.5vw;
+    padding: 2vw 1vw 0 1vw;
+}
+div.inneroverlay p.introcontinue a {
+    text-decoration: none;
+    color: white;
+    border: 0.2vw solid white;
+    padding: 0.3vw 2vw 0.35vw 2vw;
+    background-color: #222;
+}
+div.inneroverlay p.audsync a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    border: 0.2vw solid white;
+    padding: 0.3vw 2vw 0.35vw 2vw;
+    background-color: #222;
+    width: 10vw;
+    margin: 0 auto;
+}
+div.inneroverlay div.audsync-wrapper {
+    display: table;
+    margin: 0 auto;
+}
+div.inneroverlay p.audsync-cell {
+    display: table-cell;
+}
+div.inneroverlay p.audsync-disabled a {
+    border: 0.2vw solid gray;
+    color: gray;
+    background-color: #171717;
+}
+div.inneroverlay p.audsyncauth {
+    color: red;
+    font-weight: bold;
+}
+div.inneroverlay img.imgpreview {
+	width: 30vw;
+	margin: 1vw 0;
+}
+div.inneroverlay img.imgicon {
+    height: 15vw;
+    margin: 1vw 0;
+}
+div.inneroverlay img.imgflag {
+	height: 3.5vw;
+	margin-top: 1vw;
+	cursor: pointer;
+}
+img.dlarrow {
+    width: 5vw;
+    margin-left: -3.5vw;
+    margin-top: 11.5vw;
+    position: absolute;
+    z-index: 10;
+}
+div.timer {
+    font-size: 30vw;
+    width: 100%;
+    text-align: right;
+}
+div.timer p {
+    padding: 0px;
+    margin: 0px;
+}
+div.timer small {
+    font-size: 20vw;
+}
+table {
+    width: 100%;
+    padding-right: 9vw;
+}
+td.abcd {
+    color: #ffa500;
+    line-height: 13vw;
+    font-size: 14vw;
+    text-align: center;
+    width: 17vw;
+    padding-left: 1vw;
+}
+span.abcd {
+    color: #ffa500;
+    font-weight: bold;
+}
+td#timer, span.timerdemo {
+    color: red;
+}
+span.timerdemo {
+    font-weight: bold;
+}
+div.config {
+    width: 100%;
+    text-align: center;
+    font-size: 8vw;
+    color: #333;
+}
+div.config a {
+    color: #333;
+    text-decoration: none;
+}
+div.config a.egcy {
+    color: #500;
+    text-decoration: none;
+}
+div.config a:hover {
+    color: #FFF;
+}
+div.config a.egcy:hover {
+    color: #F00;
+}
+span.startdemo {
+    color: #555;
+    font-weight: bold;
+}
+span.egcydemo {
+    color: #900;
+    font-weight: bold;
+}
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+.notoppad {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}

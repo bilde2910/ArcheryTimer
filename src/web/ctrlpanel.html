@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Archery timer control panel</title>
+		<link rel="icon" type="image/png" href="favicon.png">
+        <style type="text/css">
+* {
+    background-color: black;
+}
+button {
+    width: 100%;
+    height: 7.5vw;
+    font-size: 5vw;
+    color: white;
+}
+table {
+    width: 100%;
+}
+td.abcd {
+    width: 16.667%;
+}
+td.abcd button {
+    color: #ffa500;
+}
+.tctrl {
+    font-size: 3vw;
+}
+.w50 {
+    width: 50%;
+}
+        </style>
+		<script type="text/javascript">
+			var i18n = window.opener.getI18NArray();
+			
+			function localize() {
+				var lang = window.opener.getLanguage();
+				var larr = i18n[lang];
+				var enus = i18n["enUS"];
+				var earr = document.querySelectorAll('[data-i18n]');
+				for (var i = 0; i < earr.length; i++) {
+					var uuid = earr[i].dataset.i18n;
+					var str = (larr.hasOwnProperty(uuid) ? larr[uuid] : enus[uuid]);
+					var tag = str.match(/\{%\$?[\w\-]+\}/g);
+					while (tag != null) {
+						for (var j = 0; j < tag.length; j++) {
+							var tagnaked = tag[j].slice(2, -1).toLowerCase();
+							str = str.replace(tag[j], (tagnaked.substr(0, 1) == "$" ? (larr.hasOwnProperty(tagnaked.substring(1)) ? larr[tagnaked.substring(1)] : enus[tagnaked.substring(1)]) : earr[i].getAttribute("data-i18n-" + tagnaked)));
+						}
+						tag = str.match(/\{%\$?[\w\-]+\}/g);
+					}
+					earr[i].innerHTML = str;
+				}
+			}
+		</script>
+    </head>
+    <body onload="localize();">
+        <table>
+            <tbody>
+                <tr>
+                    <td><button onclick="window.opener.setTime2(10);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="10"></button></td>
+                    <td><button onclick="window.opener.setTime2(20);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="20"></button></td>
+                    <td class="w50" colspan="3"><button onclick="window.opener.startTimer();" style="color: lime;" data-i18n="176cd88e-ad14-4a8b-9633-c8257ad35d92"></button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="window.opener.setTime2(40);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="40"></button></td>
+                    <td><button onclick="window.opener.setTime2(60);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="60"></button></td>
+                    <td class="w50" colspan="3"><button onclick="window.opener.ceaseFire();" style="color: red;" data-i18n="2e507705-99cb-4d92-8fa7-436e32b67083"></button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="window.opener.setTime2(80);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="80"></button></td>
+                    <td><button onclick="window.opener.setTime2(120);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="120"></button></td>
+                    <td class="abcd"><button onclick="window.opener.toggleABCD2('1');">AB</button></td>
+                    <td class="abcd"><button onclick="window.opener.toggleABCD2('2');">CD</button></td>
+                    <td class="abcd"><button onclick="window.opener.toggleABCD2('3');" data-i18n="1caf0e11-f363-4555-9c97-dd0b9877e483"></button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="window.opener.setTime2(160);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="160"></button></td>
+                    <td><button onclick="window.opener.setTime2(180);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="180"></button></td>
+                    <td class="w50" colspan="3"><button onclick="window.opener.toggleDecimal();" class="tctrl" data-i18n="03baa248-d587-4e20-88dd-93d95172b82a"></button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="window.opener.setTime2(200);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="200"></button></td>
+                    <td><button onclick="window.opener.setTime2(240);" data-i18n="6e7c53cb-4dd0-4376-92ea-d6392a309be4" data-i18n-seconds="240"></button></td>
+                    <td class="w50" colspan="3"><button onclick="window.opener.toggleControls();" class="tctrl" data-i18n="2337ff0f-9840-44fd-8ac3-529034132604"></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

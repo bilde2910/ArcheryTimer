@@ -1,0 +1,19 @@
+AddType image/svg+xml .svg
+AddType application/octet-stream .jar
+AddType application/octet-stream .exe
+AddType text/cache-manifest .appcache
+AddType audio/mp4 .m4a
+AddType audio/ogg .ogg
+AddType audio/wav .wav
+AddCharset UTF-8 .html
+AddCharset UTF-8 .svg
+AddCharset UTF-8 .js
+AddCharset UTF-8 .css
+AddCharset UTF-8 .appcache
+<FilesMatch "\.">
+    FileETag None
+    Header unset ETag
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</FilesMatch>
